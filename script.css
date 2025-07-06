@@ -1,0 +1,88 @@
+/* script.css */
+
+/*
+  This file contains custom CSS for Space AI website.
+  Tailwind CSS is loaded via CDN in index.html.
+  Most styling is handled by Tailwind classes directly in the HTML.
+*/
+
+/* Basic body styling to ensure full height and font application */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    font-family: 'Inter', sans-serif; /* Apply Inter font globally */
+    background-color: #f9fafb; /* A very light gray, similar to OpenAI's subtle background */
+    color: #1f2937; /* Dark gray text for good contrast */
+}
+
+/* Custom utility for rounded corners (Tailwind's rounded-xl is used, but this is an example) */
+.rounded-custom {
+    border-radius: 1.25rem; /* Example custom radius */
+}
+
+/* Focus states for accessibility - slightly more prominent */
+*:focus {
+    outline: 3px solid #9ca3af; /* A more visible gray outline for focus */
+    outline-offset: 3px;
+    border-radius: 0.75rem; /* Match rounded corners */
+}
+
+/* Ensure images are responsive within their containers */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}
+
+/* General link styling */
+a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Animations for hero section elements */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInFromBottom 0.8s ease-out forwards;
+    opacity: 0; /* Start invisible */
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+/* Tailwind CSS CDN is loaded in index.html, so these classes will be available: */
+/*
+  bg-white, border-b, border-gray-200, py-4, px-6, md:px-10, shadow-sm, sticky, top-0, z-50,
+  max-w-7xl, mx-auto, flex, justify-between, items-center,
+  text-2xl, font-bold, text-gray-900,
+  space-x-6, text-gray-700, hover:text-gray-900, font-medium, transition-colors, duration-200,
+  flex-grow, relative, flex, items-center, justify-center, py-24, md:py-36, overflow-hidden,
+  text-center, max-w-5xl, z-10,
+  text-5xl, sm:text-6xl, md:text-7xl, lg:text-8xl, font-extrabold, leading-tight, mb-6,
+  text-lg, sm:text-xl, md:text-2xl, text-gray-600, mb-12, max-w-3xl,
+  flex-col, sm:flex-row, justify-center, space-y-4, sm:space-y-0, sm:space-x-4,
+  inline-flex, bg-gray-900, text-white, px-8, py-4, rounded-xl, font-semibold, text-lg, hover:bg-gray-700, transition-all, duration-300, shadow-lg, transform, hover:scale-105, focus:outline-none, focus:ring-4, focus:ring-gray-300,
+  bg-gray-100, text-gray-800, hover:bg-gray-200, shadow-md,
+  absolute, inset-0, bg-gradient-to-br, from-white, to-gray-50, opacity-50, z-0,
+  py-20, grid, grid-cols-1, md:grid-cols-2, lg:grid-cols-3, gap-10,
+  p-8, border, border-gray-100, flex-col, items-center, hover:shadow-xl,
+  text-5xl, text-gray-700, mb-6,
+  text-2xl, font-semibold, mb-4,
+  text-gray-600,
+  bg-gray-50, border-t, text-gray-500, text-sm, antialiased, bg-neutral-50
+*/

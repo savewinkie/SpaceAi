@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space AI - Your Intelligent Co-pilot</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="script.css">
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind configuration for Inter font */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral-50 text-gray-900 leading-relaxed antialiased">
+    <!-- Header Section -->
+    <header class="w-full bg-white border-b border-gray-200 py-4 px-6 md:px-10 shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-900">
+                <a href="index.html">Space AI</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200">Home</a></li>
+                <li><a href="about.html" class="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200">About</a></li>
+                <!-- Add more navigation links here as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="flex-grow">
+        <section class="relative flex items-center justify-center py-24 md:py-36 px-6 md:px-10 bg-white overflow-hidden">
+            <div class="text-center max-w-5xl mx-auto z-10">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 leading-tight mb-6 animate-fade-in-up">
+                    Your Universe of Intelligence
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto animate-fade-in-up delay-200">
+                    Space AI is here to explore your questions and illuminate your ideas, making complex tasks simple and accessible.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up delay-400">
+                    <!-- This button links directly to the chat.html page -->
+                    <a href="chat.html" class="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-700 transition-all duration-300 shadow-lg transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-300">
+                        Try Space AI Now
+                    </a>
+                    <a href="about.html" class="inline-flex items-center justify-center bg-gray-100 text-gray-800 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-200 transition-all duration-300 shadow-md transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <!-- Subtle background element (optional, for visual interest) -->
+            <div class="absolute inset-0 bg-gradient-to-br from-white to-gray-50 opacity-50 z-0"></div>
+        </section>
+
+        <!-- Key Capabilities Section -->
+        <section class="py-20 px-6 md:px-10 bg-neutral-50">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+                    Unlock New Possibilities
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Capability 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-5xl text-gray-700 mb-6">✨</div> <!-- Placeholder icon -->
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Instant Insights</h3>
+                        <p class="text-gray-600">Get immediate, accurate answers to your most pressing questions across a vast range of topics.</p>
+                    </div>
+                    <!-- Capability 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-5xl text-gray-700 mb-6">✍️</div> <!-- Placeholder icon -->
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Creative Co-pilot</h3>
+                        <p class="text-gray-600">Generate ideas, draft content, and overcome creative blocks with intelligent suggestions.</p>
+                    </div>
+                    <!-- Capability 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-5xl text-gray-700 mb-6">⚙️</div> <!-- Placeholder icon -->
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Task Automation</h3>
+                        <p class="text-gray-600">Streamline your workflow by automating routine tasks and managing your schedule effortlessly.</p>
+                    </div>
+                    <!-- Capability 4 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-5xl text-gray-700 mb-6">🗣️</div> <!-- Placeholder icon -->
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Language Translation</h3>
+                        <p class="text-gray-600">Break down communication barriers with seamless and accurate language translation.</p>
+                    </div>
+                    <!-- Capability 5 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-5xl text-gray-700 mb-6">📊</div> <!-- Placeholder icon -->
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Data Analysis</h3>
+                        <p class="text-gray-600">Process and understand complex data sets, extracting meaningful insights quickly.</p>
+                    </div>
+                    <!-- Capability 6 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-5xl text-gray-700 mb-6">💡</div> <!-- Placeholder icon -->
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Personalized Learning</h3>
+                        <p class="text-gray-600">Receive tailored information and explanations to enhance your learning journey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="w-full bg-gray-50 border-t border-gray-200 py-6 px-6 md:px-10 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Space AI. All rights reserved.</p>
+    </footer>
+
+    <!-- script.js is not needed on index.html as its functionality is for chat.html -->
+</body>
+</html>

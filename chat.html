@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space AI Chat - Your Intelligent Co-pilot</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="script.css">
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind configuration for Inter font */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 leading-relaxed antialiased flex flex-col min-h-screen">
+    <script>
+        console.log("chat.html page loaded!");
+    </script>
+
+    <!-- Main container for the entire chat interface (header, sidebar, chat area) -->
+    <div class="flex flex-grow">
+        <!-- Chat History Sidebar -->
+        <aside class="flex flex-col w-64 bg-white border-r border-gray-200 shadow-lg p-4 space-y-2 overflow-y-auto">
+            <!-- Top section of sidebar -->
+            <div class="flex items-center justify-between mb-6">
+                <div class="text-xl font-bold text-gray-900">Space AI</div>
+                <!-- New Chat Button -->
+                <button class="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-md p-1 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Search Chats (Placeholder) -->
+            <div class="relative mb-4">
+                <input type="text" placeholder="Search chats..." class="w-full p-2 pl-8 bg-gray-100 text-gray-800 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+            </div>
+
+            <!-- Chat History List -->
+            <ul class="space-y-1 flex-grow overflow-y-auto custom-scrollbar">
+                <!-- "No history" message - visible by default -->
+                <div id="no-history-message" class="text-center text-gray-400 text-lg py-4">
+                    No history of chats
+                </div>
+                <!-- Hardcoded chat history items (initially hidden) -->
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">New Chat</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Chats doorzoeken</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Bibliotheek</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Sora</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">GPT's</a></li>
+                <li class="text-gray-500 text-xs uppercase pt-4 pb-1 hidden">Chats</li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Website Creation Help</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Wi-Fi Disconnect Troubleshooting</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Anchor Speed Settings Query</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Donut SMP Pig Spawner</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Ninebot F2SL tweedehands wa...</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Scooter verkoop zonder stress</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Surface Laptop Resolution Fix</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Enable Cruise Control App</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Increasing Scooter Speed App</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Cutting Speed Limiter Request</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Starlink Disconnect Issue Help</a></li>
+                <li class="hidden"><a href="#" class="block p-2 rounded-md hover:bg-gray-100 text-gray-700">Segway Snelheid Verhogen</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Chat Content Area -->
+        <section class="flex flex-col flex-grow bg-white relative">
+            <!-- Top Header for Main Chat Area -->
+            <header class="w-full bg-white border-b border-gray-200 py-4 px-6 flex justify-end items-center shadow-sm">
+                <ul class="flex space-x-6 items-center">
+                    <li><a href="index.html" class="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200">Home</a></li>
+                    <li><a href="about.html" class="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200">About</a></li>
+                    <!-- User Profile Picture -->
+                    <li class="ml-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 font-semibold text-lg overflow-hidden border border-gray-300">
+                            <img src="https://placehold.co/40x40/cccccc/333333?text=JP" alt="User Profile" class="w-full h-full object-cover">
+                        </div>
+                    </li>
+                </ul>
+            </header>
+
+            <!-- Chat Messages Display Area -->
+            <div id="chat-messages" class="flex-grow overflow-y-auto py-4 pl-24 pr-24 space-y-4 flex flex-col h-0 min-h-0">
+                <!-- Initial welcoming message -->
+                <div id="initial-prompt" class="text-center text-gray-500 text-3xl font-semibold mb-8 w-full">
+                    Waarmee kan ik je helpen, Link?
+                </div>
+                <!-- Chat messages will be dynamically appended here by script.js -->
+            </div>
+
+            <!-- Chat Input and Send Button Area - Fixed at the bottom -->
+            <div id="chat-input-area-container" class="p-4 bg-white flex justify-center w-full border-t border-gray-200">
+                <div class="flex items-center space-x-2 w-full bg-white border border-gray-300 rounded-xl shadow-md p-2">
+                    <!-- Hidden file input -->
+                    <input type="file" id="file-input" class="hidden" multiple accept="image/*, .pdf, .doc, .docx">
+
+                    <input type="text" id="user-input" placeholder="Stel een vraag" class="flex-grow p-2 bg-transparent text-gray-800 focus:outline-none text-base h-10">
+
+                    <!-- Microphone icon (always visible) -->
+                    <button class="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-md p-1" id="microphone-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                    </button>
+                    <!-- Plus icon (for files) - visibility managed by JS for smooth transition -->
+                    <button id="sound-wave-button" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-md p-1 flex-shrink-0 transition-opacity duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                    </button>
+                    <!-- Send Button - visibility managed by JS for smooth transition -->
+                    <button id="send-button" class="bg-gray-900 text-white p-2 rounded-full font-semibold hover:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-400 flex-shrink-0 w-10 h-10 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200">
+                        <!-- SVG for Send Icon (Up Arrow) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="loading-indicator" class="text-center text-gray-600 mt-3 text-sm hidden w-full max-w-2xl">
+                    Space AI is thinking...
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
